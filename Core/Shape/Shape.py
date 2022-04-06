@@ -1,11 +1,24 @@
-from Shape import *
-lenght = int(input("enter lenght"))
-width = int (input("enter width"))
-class Rectangle(Shape):
-    def __init__(self,length,width,c='',b=0):
-        self.__length = length
-        self.__width =width
-        super(Rectangle,self).__init__(c,b)
+from abc import ABC,abstractmethod
 
+
+class Shape(ABC):
+    def __init__(self, c,b):
+        self.__color = c
+        self.__borderWidth = b
+    @abstractmethod
     def area(self):
-       return self.__length*self.__width
+        pass
+
+    def getcolor(self):
+        return self.__color
+
+    def getBorderWidth(self):
+        return self.__borderWidth
+    def sum(self):
+        pass
+
+    def __str__(self):
+        return self.__color
+
+
+
